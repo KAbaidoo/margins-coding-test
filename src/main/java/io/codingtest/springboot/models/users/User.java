@@ -1,6 +1,9 @@
-package io.codingtest.springboot.models;
+package io.codingtest.springboot.models.users;
+
+import io.codingtest.springboot.models.users.Role;
 
 import javax.persistence.*;
+
 import java.util.Collection;
 
 @Entity
@@ -30,10 +33,11 @@ public class User {
         return id;
     }
 
+    @Column(length = 50,nullable = false)
     public String getUsername() {
         return username;
     }
-
+    @Column(length = 120,nullable = false)
     public String getPassword() {
         return password;
     }

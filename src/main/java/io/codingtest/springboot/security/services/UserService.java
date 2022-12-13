@@ -1,7 +1,8 @@
 package io.codingtest.springboot.security.services;
 
-import io.codingtest.springboot.models.Role;
-import io.codingtest.springboot.models.User;
+import io.codingtest.springboot.models.users.ERole;
+import io.codingtest.springboot.models.users.Role;
+import io.codingtest.springboot.models.users.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,9 +19,9 @@ public interface UserService {
 
     Role saveRole(Role role);
 
-    Optional<Role> getRole(String name);
+    Optional<Role> getRole(ERole name);
 
-    void addRoleToUser(String username, String roleName);
+    void addRoleToUser(String username, ERole roleName);
 
 
 }

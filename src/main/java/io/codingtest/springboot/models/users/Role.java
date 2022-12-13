@@ -1,4 +1,4 @@
-package io.codingtest.springboot.models;
+package io.codingtest.springboot.models.users;
 
 import javax.persistence.*;
 
@@ -8,16 +8,21 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
 
-    public Role(String name) {
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERole name;
+
+    public Role(Long id, ERole name) {
+        this.id = id;
         this.name = name;
     }
 
     public Role() {
     }
 
-    public void setName(String name) {
+    public void setName(ERole name) {
         this.name = name;
     }
 
@@ -25,7 +30,7 @@ public class Role {
         return id;
     }
 
-    public String getName() {
+    public ERole getName() {
         return name;
     }
 

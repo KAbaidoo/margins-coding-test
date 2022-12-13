@@ -1,6 +1,6 @@
 package io.codingtest.springboot.repository;
 
-import io.codingtest.springboot.models.User;
+import io.codingtest.springboot.models.users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

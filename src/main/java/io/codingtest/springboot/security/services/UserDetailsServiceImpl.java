@@ -1,7 +1,8 @@
 package io.codingtest.springboot.security.services;
 
-import io.codingtest.springboot.models.Role;
-import io.codingtest.springboot.models.User;
+import io.codingtest.springboot.models.users.ERole;
+import io.codingtest.springboot.models.users.Role;
+import io.codingtest.springboot.models.users.User;
 import io.codingtest.springboot.repository.RoleRepository;
 import io.codingtest.springboot.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -65,12 +66,12 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
     }
 
     @Override
-    public Optional<Role> getRole(String name) {
+    public Optional<Role> getRole(ERole name) {
         return roleRepo.findByName(name);
     }
 
     @Override
-    public void addRoleToUser(String username, String roleName) throws UsernameNotFoundException {
+    public void addRoleToUser(String username, ERole roleName) throws UsernameNotFoundException {
 
         log.info("Saving role {} to user {}", roleName, username);
         Optional<User> user = userRepo.findByUsername(username);

@@ -1,8 +1,9 @@
 package io.codingtest.springboot.controllers;
 
 
-import io.codingtest.springboot.models.Role;
-import io.codingtest.springboot.models.User;
+import io.codingtest.springboot.models.users.ERole;
+import io.codingtest.springboot.models.users.Role;
+import io.codingtest.springboot.models.users.User;
 import io.codingtest.springboot.payload.request.LoginRequest;
 import io.codingtest.springboot.payload.request.SignupRequest;
 import io.codingtest.springboot.payload.response.JwtResponse;
@@ -87,14 +88,14 @@ public class AuthController {
 
 
         if (strRoles.isEmpty()) {
-            Role userRole = userDetailsService.getRole("ROLE_USER")
+            Role userRole = userDetailsService.getRole(ERole.ROLE_USER)
                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
             userDetailsService.addRoleToUser(signUpRequest.getEmail(),userRole.getName());
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
                     case "admin":
-                        Role adminRole = userDetailsService.getRole("ROLE_ADMIN")
+                        Role adminRole = userDetailsService.getRole(ERole.ROLE_ADMIN)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 
                         userDetailsService.addRoleToUser(signUpRequest.getEmail(),adminRole.getName());
@@ -102,13 +103,13 @@ public class AuthController {
 
                         break;
                     case "merch":
-                        Role merchantRole = userDetailsService.getRole("ROLE_MERCHANT")
+                        Role merchantRole = userDetailsService.getRole(ERole.ROLE_MERCHANT)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                         userDetailsService.addRoleToUser(signUpRequest.getEmail(),merchantRole.getName());
 
                         break;
                     default:
-                        Role userRole = userDetailsService.getRole("ROLE_USER")
+                        Role userRole = userDetailsService.getRole(ERole.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                         userDetailsService.addRoleToUser(signUpRequest.getEmail(),userRole.getName());
                 }
