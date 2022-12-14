@@ -9,8 +9,8 @@ import io.codingtest.springboot.payload.request.SignupRequest;
 import io.codingtest.springboot.payload.response.JwtResponse;
 import io.codingtest.springboot.payload.response.MessageResponse;
 import io.codingtest.springboot.security.jwt.JwtUtils;
-import io.codingtest.springboot.security.services.UserDetailsImpl;
-import io.codingtest.springboot.security.services.UserDetailsServiceImpl;
+import io.codingtest.springboot.security.services.users.UserDetailsImpl;
+import io.codingtest.springboot.security.services.users.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

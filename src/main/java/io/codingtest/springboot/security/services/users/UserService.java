@@ -1,4 +1,4 @@
-package io.codingtest.springboot.security.services;
+package io.codingtest.springboot.security.services.users;
 
 import io.codingtest.springboot.models.users.ERole;
 import io.codingtest.springboot.models.users.Role;

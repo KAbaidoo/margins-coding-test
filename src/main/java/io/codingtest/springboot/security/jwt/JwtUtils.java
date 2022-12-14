@@ -1,6 +1,6 @@
 package io.codingtest.springboot.security.jwt;
 
-import io.codingtest.springboot.security.services.UserDetailsImpl;
+import io.codingtest.springboot.security.services.users.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

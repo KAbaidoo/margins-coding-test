@@ -1,6 +1,6 @@
 package io.codingtest.springboot.models.data;
 
-public enum EData {
+public enum EDataType {
     PNG,
     JPEG
 }

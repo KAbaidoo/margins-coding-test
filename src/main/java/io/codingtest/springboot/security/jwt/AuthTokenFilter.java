@@ -1,6 +1,6 @@
 package io.codingtest.springboot.security.jwt;
 
-import io.codingtest.springboot.security.services.UserDetailsServiceImpl;
+import io.codingtest.springboot.security.services.users.UserDetailsServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
